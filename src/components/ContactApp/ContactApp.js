@@ -14,14 +14,17 @@ class ContactApp extends Component{
 	render(){
 		return (
 			<div id="contact-container">	
-				<SearchBar filterText={this.state.filterText}/> 
+				<SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)}/> 
 				<ContactList contacts={this.props.contacts} filterText={this.state.filterText}/>
 			</div>
 		);
 	}
 
+	handleUserInput(searchTerm){
+		this.setState({filterText:searchTerm})
+	}
 }
 ContactApp.propTypes = {
-	contacts: PropTypes.arrayOf(PropTypes.object)
+	contacts: PropTypes.arrayOf(PropTypes.object),
 }
 export default ContactApp;
