@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+// Pure component that receives 2 props from the parent
+// filterText (string) and onUserInput (callback function)
 class SearchBar extends Component{
 
 	render(){
 		return(
-			<input type='text' placeholder="Search text" value={this.props.filterText} onChange={this.handleChange.bind(this)}/>
+			<input type='text' 
+					placeholder="Search text" 
+					value={this.props.filterText} 
+					onChange={this.handleChange.bind(this)}/>
 		);
 	}
 
